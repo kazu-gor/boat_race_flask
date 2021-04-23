@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead">
+                    {% if name %}
+                    こんにちは {{ name }} さん
+                    {% else %}
+                        {{ message }}
+                    {% endif %}
+                </p>
+                <form action="/scraping" method="post" class="form-inline">
+                    <label for="name">日付選択</label>
+                    <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+                    <button type="submit" class="btn btn-primary">送信する</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

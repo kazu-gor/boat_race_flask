@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>{{ year }}年{{ month }}月{{ day }}日のレース情報</h2>
+    <table border="1">
+        <tr>
+            <th>艇番</th>
+            <th>選手登板</th>
+            <th>選手名</th>
+            <th>年齢</th>
+            <th>支部</th>
+            <th>体重</th>
+            <th>級別</th>
+            <th>全国勝率</th>
+            <th>全国2率</th>
+            <th>当地勝率</th>
+            <th>当地2率</th>
+            <th>モータNo</th>
+            <th>モータ2率</th>
+            <th>ボートNo</th>
+            <th>ボート2率</th>
+        </tr>
+        {% for data in results %}
+        <tr>
+        {% for el in data %}
+            <td>{{ el }}</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
