@@ -28,13 +28,19 @@ def scraping():
     results = edit_program(month, day)
     return render_template('result.html', year=year, month=month, day=day, results=results)
 
+@app.route('/predict', methods=['GET', 'POST'])
+def predict():
+    model_1st, model_2nd, model_3rd = model_weight()
+    data_list = create_df(request.form['date'])
+    
+    
+
 @app.route('/post', methods=['GET', 'POST'])
 def post():
     title = "こんにちは"
     if request.method == 'POST':
         name = request.form['name']
         return render_template('index.html', name=name, title=title)
-
     else:
         return redirect(url_for('index'))
 

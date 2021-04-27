@@ -1,6 +1,13 @@
 {% extends "layout.html" %}
 {% block content %}
     <h2>{{ year }}年{{ month }}月{{ day }}日のレース情報</h2>
+
+    <form action="/" method="post" class="form-inline">
+        <label for="name">日付選択</label>
+        <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+        <button type="submit" class="btn btn-primary">送信する</button>
+    </form>
+    
     <table border="1">
         <tr>
             <th>艇番</th>
